@@ -144,7 +144,7 @@
           <a href="about.html" class="btn btn-outline-danger btn-lg">Learn More</a>
         </div>
         <div class="col-md-6">
-        <img src="img/laptop.png" alt="Laptop photo" class="img-fluid">
+          <img src="img/laptop.png" alt="Laptop photo" class="img-fluid">
         </div>
       </div>
     </div>
@@ -167,6 +167,7 @@
   </section>
 
   <!-- Photo Gallery -->
+  <!-- Uses Lightbox for Bootstrap -->
   <section class="py-5 bg-warning" id="gallery">
     <div class="container">
       <h1 class="text-center text-secondary">Photo Gallery</h1>
@@ -242,10 +243,10 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-        <button class="close" data-dismiss="modal">
-          <span>&times;</span>
-        </button>
-        <iframe src="" frameborder="0" width="100%" height="350" allowfullscreen></iframe>
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+          <iframe src="" frameborder="0" width="100%" height="350" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -261,7 +262,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 
   <script>
-
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
 
@@ -273,24 +273,23 @@
 
     // Lightbox init
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
 
     // Video Play
-    $(function () {
-     // Auto play modal video
-     $(".video").click(function () {
-       var theModal = $(this).data("target"),
-         videoSRC = $(this).attr("data-video"),
-         videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-       $(theModal + ' iframe').attr('src', videoSRCauto);
-       $(theModal + ' button.close').click(function () {
-         $(theModal + ' iframe').attr('src', videoSRC);
-       });
-     });
-   });
-
+    $(function() {
+      // Auto play modal video
+      $(".video").click(function() {
+        var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function() {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+      });
+    });
   </script>
 </body>
 
