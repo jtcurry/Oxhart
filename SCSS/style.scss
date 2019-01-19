@@ -6,6 +6,9 @@ $warning: #CAFAFE;
 $danger: #FC4445;
 $secondary: #6c757d;
 
+body {
+  overflow-x: hidden;
+}
 // Index Page
 .navbar {
   img {
